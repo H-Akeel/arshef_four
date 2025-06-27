@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الرئيسية | منصة الرابعة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main1: #4e54c8;
+            --main2: #8f94fb;
+            --accent: #ffb347;
+            --danger: #e57373;
+            --success: #43cea2;
+            --white: #fff;
+            --gray-bg: #f5f7fa;
+        }
+        body {
+            font-family: 'Cairo', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--gray-bg) 0%, var(--main2) 100%);
+            margin: 0;
+            min-height: 100vh;
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, var(--main1) 0%, var(--main2) 100%);
+            box-shadow: 0 2px 12px rgba(78, 84, 200, 0.08);
+            padding: 0 0 8px 0;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 24px 0 24px;
+        }
+        .slo_img {
+            height: 70px;
+            width: auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(78, 84, 200, 0.08);
+            padding: 6px;
+            margin: 0 0 0 12px;
+        }
+        .user-info-box {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 8px 18px;
+            box-shadow: 0 1px 8px rgba(78, 84, 200, 0.08);
+        }
+        .username {
+            font-weight: 700;
+            color: var(--main1);
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .user-icon {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 4px;
+        }
+        .role-inline {
+            background: var(--main2);
+            color: var(--main1);
+            border-radius: 8px;
+            padding: 2px 10px;
+            font-size: 0.95em;
+            margin-right: 8px;
+            margin-left: 2px;
+        }
+        .logout-btn, .main-btn.login {
+            background: linear-gradient(90deg, var(--main1) 0%, var(--main2) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 7px 18px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            margin-right: 8px;
+        }
+        .logout-btn:hover, .main-btn.login:hover {
+            background: linear-gradient(90deg, var(--main2) 0%, var(--main1) 100%);
+            color: var(--main1);
+        }
+        .main-hero {
+            background: linear-gradient(120deg, #ffb347 0%, var(--main2) 50%, var(--success) 100%);
+            color: #fff;
+            padding: 60px 24px;
+            border-radius: 18px;
+            box-shadow: 0 2px 24px rgba(78,84,200,0.13);
+            margin: 32px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+        .main-hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .main-hero p {
+            font-size: 1.15em;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+        .main-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--white);
+            background: linear-gradient(90deg, var(--main1) 0%, var(--main2) 100%);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .main-btn:hover {
+            background: linear-gradient(90deg, var(--main2) 0%, var(--main1) 100%);
+            color: var(--main1);
+        }
+        .section-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 0 18px;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(78, 84, 200, 0.07);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(78, 84, 200, 0.1);
+        }
+        @media (max-width: 800px) {
+            .header-flex, main { max-width: 98vw; padding: 0 4vw; }
+            .main-hero h1 { font-size: 2em; }
+            .main-hero p { font-size: 1em; }
+        }
+        @media (max-width: 500px) {
+            .header-flex { flex-direction: column; gap: 10px; }
+            .user-info-box { flex-direction: column; gap: 6px; }
+            .main-hero h1 { font-size: 1.5em; }
+            .main-hero p { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+            <img class="slo_img" src="img/شعار_قناة_الرابعة.png" alt="شعار قناة الرابعة">
+            <div class="user-info-box">
+                <span class="username">
+                    <span class="user-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="7" r="4" fill="#fff" fill-opacity="0.7"/>
+                            <ellipse cx="10" cy="15.2" rx="6.5" ry="3.2" fill="#fff" fill-opacity="0.4"/>
+                        </svg>
+                    </span>
+                    مرحباً بك في منصة الرابعة
+                </span>
+                <a href="login.php" class="main-btn login">تسجيل الدخول</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="main-hero">
+            <h1>منصة الرابعة</h1>
+            <p>
+                منصة متكاملة لإدارة أقسام قناة الرابعة: الذكاء الإبداعي، تطبيق هسه، دقة الفكرة، موظفي الرابعة، الرابعة الرياضية، نجوم الرابعة.<br>
+                استكشف الأقسام، أضف وحرر البيانات، وكن جزءاً من التميز المؤسسي.
+            </p>
+            <a href="login.php" class="main-btn login">تسجيل الدخول</a>
+        </section>
+        <section class="section-cards">
+            <div class="card">
+                <h3>الذكاء الإبداعي</h3>
+                <p>إدارة كتب الذكاء الإبداعي، الإضافة والتعديل والحذف بسهولة.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+            <div class="card">
+                <h3>تطبيق هسه</h3>
+                <p>سجّل بيانات تطبيق هسه وتابع كل جديد في القسم.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+            <div class="card">
+                <h3>دقة الفكرة</h3>
+                <p>أضف وتابع كتب دقة الفكرة وحرر بياناتها.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+            <div class="card">
+                <h3>موظفي الرابعة</h3>
+                <p>إدارة بيانات الموظفين والمباشرة والمسمى الوظيفي.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+            <div class="card">
+                <h3>الرابعة الرياضية</h3>
+                <p>سجّل كتب الرابعة الرياضية وتابع كل جديد.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+            <div class="card">
+                <h3>نجوم الرابعة</h3>
+                <p>إدارة بيانات وكتب نجوم الرابعة بكل سهولة.</p>
+                <a href="login.php" class="main-btn" style="pointer-events:none;opacity:0.5;">عرض القسم</a>
+            </div>
+        </section>
+    </main>
+    <footer style="text-align: center; padding: 20px; background: #f8f9fa; margin-top: 30px;">
+        جميع الحقوق محفوظة &copy; 2025
+    </footer>
+</body>
+</html>
